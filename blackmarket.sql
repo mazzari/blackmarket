@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2021 at 12:41 PM
+-- Generation Time: May 08, 2021 at 08:35 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -75,47 +75,25 @@ CREATE TABLE `daftarbarang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabeladmin`
---
-
-CREATE TABLE `tabeladmin` (
-  `id_admin` int(2) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tabeladmin`
---
-
-INSERT INTO `tabeladmin` (`id_admin`, `username`, `password`) VALUES
-(1, 'blackmarket', '12345'),
-(2, 'martin', 'asdfqwer'),
-(3, 'muhammadmazzari@gmai', 'ariganteng'),
-(4, 'muhammad@gmail.com', 'ari123');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id_users` int(11) NOT NULL,
-  `nama_users` varchar(100) NOT NULL,
-  `alamat` varchar(150) NOT NULL,
-  `nomor_tlp` varchar(15) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `tanggal_lahir` date NOT NULL
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_users`, `nama_users`, `alamat`, `nomor_tlp`, `email`, `tanggal_lahir`) VALUES
-(1, 'asd', 'dfg', '1234567', '123@qwee.com', '2021-05-01'),
-(2, 'udin', 'jl makmur', '089575434', 'udin232@gmail.com', '1996-08-23');
+INSERT INTO `users` (`id_users`, `username`, `password`) VALUES
+(1, 'blackmarket', '12345'),
+(2, 'arimazzar@gmail.com', 'ari123'),
+(3, 'martin@gmail.com', '12345678'),
+(4, 'coba@gmail.com', '12345'),
+(5, 'asd@gmail.com', '1234');
 
 --
 -- Indexes for dumped tables
@@ -138,12 +116,6 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `daftarbarang`
   ADD PRIMARY KEY (`id_brg`);
-
---
--- Indexes for table `tabeladmin`
---
-ALTER TABLE `tabeladmin`
-  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `users`
@@ -174,16 +146,10 @@ ALTER TABLE `daftarbarang`
   MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tabeladmin`
---
-ALTER TABLE `tabeladmin`
-  MODIFY `id_admin` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
