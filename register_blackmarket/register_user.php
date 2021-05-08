@@ -1,5 +1,5 @@
 <?php
-require_once('connection.php');
+require_once('../connection.php');
 
 if(isset($_POST['submit'])) {
     $email = $_POST['email'];
