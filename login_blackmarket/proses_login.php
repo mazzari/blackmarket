@@ -11,8 +11,8 @@ if ($hasil == TRUE){
     echo "<p> selamat datang  <b>".$namauser."</b></p>";
     echo "
         <script>
-            window.alert('login berhasil')
-            window.location='../index.html'
+            window.alert('LOGIN Berhasil')
+            window.location='../index.php'
         </script>
     ";
     
