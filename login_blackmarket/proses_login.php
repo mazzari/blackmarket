@@ -1,5 +1,8 @@
 <?php
-require_once("../connection.php");
+// perintah untuk memulai session
+session_start();
+
+include("../connection.php");
 
 $namauser = $_POST['username'];
 $password = $_POST['password'];
@@ -8,14 +11,10 @@ $query = mysqli_query($connection, "select * from users where username = '$namau
 $hasil = mysqli_num_rows($query);
 
 if ($hasil == TRUE){
+    $_SESSION['username']=$namauser;
+    header("location:../user/main.php");
     echo "<p> selamat datang  <b>".$namauser."</b></p>";
-    echo "
-        <script>
-            window.alert('LOGIN Berhasil')
-            window.location='../index.php'
-        </script>
-    ";
-    
+       
 } else {
     echo "
         <script>
